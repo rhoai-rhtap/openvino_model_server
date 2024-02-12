@@ -14,10 +14,10 @@
 # limitations under the License.
 #
 
-ARG BASE_IMAGE=registry.access.redhat.com/ubi8/ubi:8.8
+ARG BASE_IMAGE=nvcr.io/nvidia/cuda:11.8.0-runtime-ubi8
 ARG BUILD_IMAGE=build
 ARG PKG_IMAGE=pkg
-ARG RELEASE_BASE_IMAGE=registry.access.redhat.com/ubi8/ubi:8.8
+ARG RELEASE_BASE_IMAGE=nvcr.io/nvidia/cuda:11.8.0-runtime-ubi8
 
 FROM $BASE_IMAGE as base_build
 
@@ -139,7 +139,7 @@ RUN dnf install -y https://dl.fedoraproject.org/pub/epel/epel-release-latest-8.n
             http://mirror.centos.org/centos/8-stream/BaseOS/x86_64/os/Packages/libusbx-devel-1.0.23-4.el8.x86_64.rpm && \
             yum clean all
 
-ARG NVIDIA=0
+ARG NVIDIA=1
 # Add Nvidia dev tool if needed
 # hadolint ignore=DL3003
 RUN if [ "$NVIDIA" == "1" ] ; then true ; else exit 0 ; fi ; \
@@ -168,8 +168,8 @@ RUN if [ "$NVIDIA" == "1" ] ; then true ; else exit 0 ; fi ; \
 
 ENV TF_SYSTEM_LIBS="curl"
 ENV TEST_LOG="/root/.cache/bazel/_bazel_root/bc57d4817a53cab8c785464da57d1983/execroot/ovms/bazel-out/test.log"
-ARG ov_source_branch=master
-ARG ov_contrib_branch=master
+ARG ov_source_branch="releases/2023/1"
+ARG ov_contrib_branch="releases/2023/1"
 ARG sentencepiece=1
 ARG ov_source_org=openvinotoolkit
 ARG ov_contrib_org=openvinotoolkit
@@ -400,8 +400,8 @@ LABEL "description"="OpenVINO(TM) Model Server is a solution for serving AI mode
 ARG INSTALL_RPMS_FROM_URL=
 ARG INSTALL_DRIVER_VERSION="23.22.26516"
 ARG NVIDIA=0
-ARG GPU=0
-ARG debug_bazel_flags=
+ARG GPU=1
+ARG debug_bazel_flags="--strip=always"
 LABEL bazel-build-flags=${debug_bazel_flags}
 LABEL supported-devices="CPU=1 GNA=1 GPU=${GPU} NVIDIA=${NVIDIA}"
 ARG RELEASE_BASE_IMAGE
