@@ -16,6 +16,15 @@ metadata:
   name: openvino-model-server-2023-1-release-on-push
   namespace: rhoai-tenant
 spec:
+  taskRunTemplate:
+    podTemplate:
+      nodeSelector:
+        pipeline-type: build
+      tolerations:
+        - key: pipeline-type
+          operator: Equal
+          value: build
+          effect: NoSchedule
   timeouts:
     pipeline: "8h"
   params:
@@ -371,7 +380,6 @@ spec:
     - name: workspace
     - name: git-auth
       optional: true
-  taskRunTemplate: {}
   workspaces:
   - name: workspace
     volumeClaimTemplate:
