@@ -26,7 +26,7 @@ spec:
           value: build
           effect: NoSchedule
   timeouts:
-    pipeline: "8h"
+    pipeline: 4h
   params:
   - name: dockerfile
     value: Dockerfile.redhat
@@ -232,7 +232,7 @@ spec:
         - name: kind
           value: task
         resolver: bundles
-      timeout: "6h"
+      timeout: 4h
       when:
       - input: $(tasks.init.results.build)
         operator: in
