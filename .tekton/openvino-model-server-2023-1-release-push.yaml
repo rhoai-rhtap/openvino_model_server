@@ -26,7 +26,7 @@ spec:
           value: build
           effect: NoSchedule
   timeouts:
-    pipeline: 6h
+    pipeline: 8h
   params:
   - name: dockerfile
     value: Dockerfile.redhat
