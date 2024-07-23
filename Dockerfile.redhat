@@ -14,10 +14,10 @@
 # limitations under the License.
 #
 
-ARG BASE_IMAGE=nvcr.io/nvidia/cuda:11.8.0-runtime-ubi8
+ARG BASE_IMAGE=nvcr.io/nvidia/cuda:12.5.1-runtime-ubi8
 ARG BUILD_IMAGE=build
 ARG PKG_IMAGE=pkg
-ARG RELEASE_BASE_IMAGE=nvcr.io/nvidia/cuda:11.8.0-runtime-ubi8
+ARG RELEASE_BASE_IMAGE=nvcr.io/nvidia/cuda:12.5.1-runtime-ubi8
 
 FROM $BASE_IMAGE as base_build
 
