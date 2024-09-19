@@ -14,7 +14,7 @@
 # limitations under the License.
 #
 
-FROM haproxy:2.3.10
+FROM haproxy:2.9.11
 
 RUN apt-get update
 RUN apt-get upgrade -y
