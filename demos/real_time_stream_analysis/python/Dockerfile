@@ -14,7 +14,7 @@
 # limitations under the License.
 #
 
-FROM ubuntu:20.04
+FROM ubuntu:24.04
 ENV DEBIAN_FRONTEND="noninteractive"
 RUN apt-get -y update && apt-get install -y --no-install-recommends libgl1 libglib2.0-0 python3-pip && rm -rf /var/lib/apt/lists/*
 COPY requirements.txt /real_time_stream_analysis/
