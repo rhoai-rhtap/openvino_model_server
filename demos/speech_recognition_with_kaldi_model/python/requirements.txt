@@ -1,2 +1,2 @@
 -r ../../common/python/requirements.txt
-kaldi-python-io==1.2.1
+kaldi-python-io==1.2.2
