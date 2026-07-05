@@ -1,7 +1,7 @@
 huggingface-hub==0.15.1
 numpy==1.24.3
 onnx==1.14.0
-opencv-python==4.8.1.78
+opencv-python==5.0.0.93
 ovmsclient==2023.0
 pillow==10.0.1
 tokenizers==0.13.3
