@@ -6,7 +6,7 @@ ovmsclient==2023.0
 pillow==10.0.1
 tokenizers==0.13.3
 torch==1.13.1
-tqdm==4.65.0
+tqdm==4.70.0
 transformers==4.30.0
 diffusers==0.16.1
 accelerate==0.20.3
