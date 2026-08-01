@@ -1,5 +1,5 @@
 protobuf==3.19.5
-tritonclient[all]==2.22.3
+tritonclient[all]==2.71.0
 requests==2.31.0
 grpcio
 opencv-python
