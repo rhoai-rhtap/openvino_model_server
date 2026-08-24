@@ -8,7 +8,7 @@ tokenizers==0.13.3
 torch==1.13.1
 tqdm==4.65.0
 transformers==4.29.2
-diffusers==0.16.1
+diffusers==0.40.0
 accelerate==0.20.3
 scipy==1.10.1
 git+https://github.com/openvinotoolkit/model_api@master#egg=openvino_model_api&subdirectory=model_api/python
