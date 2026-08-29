@@ -19,7 +19,7 @@ module github.com/openvinotoolkit/model_sever/client/go/kserve-api
 go 1.20
 
 require (
-	google.golang.org/grpc v1.56.3
+	google.golang.org/grpc v1.83.2
 	google.golang.org/protobuf v1.30.0
 )
 
